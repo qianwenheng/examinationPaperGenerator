@@ -24,7 +24,7 @@ class InstructionUI(QtWidgets.QDialog):
         instructionText += '4.可以通过【课程|合并试题库】将所有试题库试题合并在一个word文档中，如果题库题目数量较多，合并过程需要等待较长时间\n'
         instructionText += '5.支持图像、表格和公式。不支持图形和MathType公式。对于图形，请转换成图像；对于MathType公式请在word界面中转换成OfficeMath格式\n'
         instructionText += '6.如果试卷中中文字体不支持，请保证试题库中题目文档中的中文字体设置正确（即不要用英文字体去设置中文字符）\n'
-        instructionText += '7.欢迎转发\n'
+        instructionText += '7.欢迎转发;代码开源在https://github.com/qianwenheng/examinationPaperGenerator\n'
 
         edit.setPlainText(instructionText)
         vbox = QtWidgets.QVBoxLayout()
