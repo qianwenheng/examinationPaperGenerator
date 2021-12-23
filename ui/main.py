@@ -70,6 +70,7 @@ class PaperGeneratorUI(QtWidgets.QMainWindow):
         self.setPaperTemplateAction.setEnabled(False)
 
         self.generatePaperInfoAction = QtWidgets.QAction('出卷', self)
+        self.generatePaperInfoAction.triggered.connect(self.paperOkBtnClicked)
         self.generatePaperInfoAction.setEnabled(False)
 
         self.instructionAction = QtWidgets.QAction('使用说明', self)
@@ -115,6 +116,9 @@ class PaperGeneratorUI(QtWidgets.QMainWindow):
         instructionUI.InstructionUI().exec()
 
     def showSubjectUI(self):
+        self.setPaperInfoAction.setEnabled(False)
+        self.setPaperTemplateAction.setEnabled(False)
+        self.generatePaperInfoAction.setEnabled(False)
         self.subjectUI.exec()
 
     def mergeSubject(self):
@@ -137,7 +141,8 @@ class PaperGeneratorUI(QtWidgets.QMainWindow):
         self.inserTable(tableContent='subject')
 
         self.setPaperInfoAction.setEnabled(True)
-
+        self.generatePaperInfoAction.setEnabled(False)
+        self.setPaperTemplateAction.setEnabled(False)
         self.clearLayoutBox(self.vbox)
 
         self.subjectLabel = QtWidgets.QLabel()
@@ -157,8 +162,9 @@ class PaperGeneratorUI(QtWidgets.QMainWindow):
 
     def setPaperInfo(self):
         self.setPaperInfoAction.setEnabled(False)
-
         self.setPaperTemplateAction.setEnabled(True)
+        self.generatePaperInfoAction.setEnabled(True)
+
         self.paperInfo = paperGenerating.PaperInfo(self.subject)
 
         self.inserTable(tableContent='paper')

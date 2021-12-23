@@ -29,6 +29,7 @@ class InstructionUI(QtWidgets.QDialog):
         edit.setPlainText(instructionText)
         vbox = QtWidgets.QVBoxLayout()
 
+
         vbox.addWidget(edit)
 
 
